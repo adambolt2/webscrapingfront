@@ -64,7 +64,7 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="overlay">
-      <video autoPlay loop muted playsinline webkit-playsinline className="background-video">
+      <video autoPlay loop muted playsInline className="background-video">
         <source src={video} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
