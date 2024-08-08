@@ -46,7 +46,7 @@ const Indeed = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://localhost:7270/api/IndeedModels/fdtjgz8r');
+        const response = await axios.get('https://adamswebscrapers-hhg8djg9dcd8bqem.ukwest-01.azurewebsites.net/api/IndeedModels/fdtjgz8r');
         const data = response.data;
         setData(data);
         processJobTitleChartData(data);

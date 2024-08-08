@@ -29,7 +29,7 @@ const Verify = () => {
     setDisableVerify(true);
 
     try {
-      const response = await fetch('https://localhost:7270/api/Users/verify/fdtjgz8r', {
+      const response = await fetch('https://adamswebscrapers-hhg8djg9dcd8bqem.ukwest-01.azurewebsites.net/api/Users/verify/fdtjgz8r', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ const Verify = () => {
     setSuccess('');
 
     try {
-      const response = await fetch('https://localhost:7270/api/Users/request-verification-code/fdtjgz8r', {
+      const response = await fetch('https://adamswebscrapers-hhg8djg9dcd8bqem.ukwest-01.azurewebsites.net/api/Users/request-verification-code/fdtjgz8r', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -24,7 +24,7 @@ const Register = () => {
     }
 
     try {
-      const response = await fetch('https://localhost:7270/api/Users/fdtjgz8r', {
+      const response = await fetch('https://adamswebscrapers-hhg8djg9dcd8bqem.ukwest-01.azurewebsites.net/api/Users/fdtjgz8r', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

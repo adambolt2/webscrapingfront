@@ -46,7 +46,7 @@ const TotalJobs = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://localhost:7270/api/TotalJobsModels/fdtjgz8r');
+        const response = await axios.get('https://adamswebscrapers-hhg8djg9dcd8bqem.ukwest-01.azurewebsites.net/api/TotalJobsModels/fdtjgz8r');
         const data = response.data;
         setData(data);
         console.log(data);

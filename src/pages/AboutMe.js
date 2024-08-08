@@ -16,6 +16,10 @@ const AboutMe = () => {
       <p style={{ fontSize: '1.2rem', lineHeight: '1.6', marginBottom: '20px' }}>
         Together, these technologies allow me to create comprehensive and efficient web solutions that meet the needs of modern users and businesses.
       </p>
+
+      <p style={{ fontSize: '1.2rem', lineHeight: '1.6', marginBottom: '20px' }}>
+        The backend is hosted on Azure, and the frontend is hosted on Vercel, Scrapers are ran locally and update the database weekly
+      </p>
       <p style={{ fontSize: '1.2rem', lineHeight: '1.6', marginBottom: '20px' }}>
         Feel free to check out my portfolio to see some of my work and learn more about me:
       </p>
