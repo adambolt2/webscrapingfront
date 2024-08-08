@@ -1,0 +1,47 @@
+/* Set the background color and apply general styles */
+.linkedin-container {
+    background-color: #0a070c; /* Dark background color */
+    color: white; /* Text color for contrast */
+    min-height: 100vh; /* Ensure it covers the full height of the viewport */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center-align items horizontally */
+    padding: 20px; /* Padding around the content */
+    box-sizing: border-box; /* Ensure padding does not affect the overall size */
+    text-align: center; /* Center-align text inside container */
+  }
+  
+  /* Style the heading */
+  .linkedin-container h1 {
+    font-size: 2rem; /* Font size for the heading */
+    margin: 0; /* Remove default margin */
+    padding-bottom: 20px; /* Space below the heading */
+  }
+  
+  /* Style the chart container */
+  .chart-container {
+    width: 100%;
+    max-width: 900px; /* Limit max width for larger screens */
+    height: 400px; /* Fixed height for the chart */
+    margin: 30px 0; /* Increase space around the chart */
+  }
+  
+  /* Ensure the background covers the entire height */
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 600px) {
+    .linkedin-container h1 {
+      font-size: 1.5rem; /* Smaller font size for phone mode */
+      padding-bottom: 15px; /* Adjust space below the heading */
+    }
+  
+    .chart-container {
+      height: 300px; /* Adjust height of charts for smaller screens */
+    }
+  }
+  

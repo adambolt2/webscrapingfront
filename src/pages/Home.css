@@ -1,0 +1,91 @@
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#Home {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Center text horizontally */
+}
+
+.welcome-message {
+  font-size: 32px;
+  color: white;
+  margin-bottom: 20px; /* Space between welcome message and button */
+  animation: fadeIn 1s forwards; /* Apply the fade-in animation */
+}
+
+.get-started-btn {
+  padding: 20px 40px; /* Increased padding */
+  font-size: 32px; /* Increased font size */
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  animation: fadeIn 1s forwards; /* Apply the fade-in animation */
+}
+
+.get-started-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+/* Add to Home.module.css */
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinkTextCursor {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgba(255, 255, 255, 0.75);
+  }
+}
+
+.typewriter-container {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: .15em solid rgba(255, 255, 255, 0.75);
+  animation: typewriter 1s steps(40, end), blinkTextCursor .75s step-end infinite;
+  font-size: 36px;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Optional: initial vertical offset */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Final vertical position */
+  }
+}
