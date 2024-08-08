@@ -46,11 +46,8 @@ const LinkedIn = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://adamswebscrapers-hhg8djg9dcd8bqem.ukwest-01.azurewebsites.net/api/LinkedInModels/fdtjgz8r', {
-          headers: {
-            'Access-Control-Allow-Origin': '*', // You can specify the origin here or use '*'
-          }
-        });        const data = response.data;
+        const response = await axios.get('https://adamswebscrapers-hhg8djg9dcd8bqem.ukwest-01.azurewebsites.net/api/LinkedInModels/fdtjgz8r');
+        const data = response.data;
         setData(data);
         processSeniorityChartData(data);
         processEmploymentChartData(data);
