@@ -84,7 +84,7 @@ const MyProfile = () => {
                 <h4>Indeed API URL:</h4>
                 <p>
                   <code>
-                    https://localhost:7270/api/IndeedModels/JobTitle/jobTitle/limit/startRow/apiKey
+                  https://adamswebscrapers-hhg8djg9dcd8bqem.ukwest-01.azurewebsites.net/api/IndeedModels/JobTitle/jobTitle/limit/startRow/apiKey
                   </code>
                 </p>
                 <p>Replace <code>jobTitle</code>, <code>limit</code>, <code>startRow</code> and <code>apiKey</code> with appropriate values.</p>
@@ -102,7 +102,7 @@ const MyProfile = () => {
                 <h4>TotalJobs API URL:</h4>
                 <p>
                   <code>
-                    https://localhost:7270/api/TotalJobsModels/JobTitle/jobTitle/limit/startRow/apiKey
+                  https://adamswebscrapers-hhg8djg9dcd8bqem.ukwest-01.azurewebsites.net/api/TotalJobsModels/JobTitle/jobTitle/limit/startRow/apiKey
                   </code>
                 </p>
                 <p>Replace <code>jobTitle</code>, <code>limit</code>, <code>startRow</code> and <code>apiKey</code> with appropriate values.</p>
@@ -120,7 +120,7 @@ const MyProfile = () => {
                 <h4>LinkedIn API URL:</h4>
                 <p>
                   <code>
-                    https://localhost:7270/api/LinkedInModels/JobTitle/jobTitle/limit/startRow/apiKey
+                  https://adamswebscrapers-hhg8djg9dcd8bqem.ukwest-01.azurewebsites.net/api/LinkedInModels/JobTitle/jobTitle/limit/startRow/apiKey
                   </code>
                 </p>
                 <p>Replace <code>jobTitle</code>, <code>limit</code>, <code>startRow</code> and <code>apiKey</code> with appropriate values.</p>
