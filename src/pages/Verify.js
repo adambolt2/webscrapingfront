@@ -86,10 +86,10 @@ const Verify = () => {
   return (
     <div className="verify-container">
       <div className="overlay">
-        <video autoPlay loop muted className="background-video">
-          <source src={video} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+      <video autoPlay loop muted playsinline webkit-playsinline  className="background-video">
+        <source src={video} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
         <form className="verify-form" onSubmit={handleVerify}>
           <h2>Verify Your Email</h2>
           <input
