@@ -6,7 +6,7 @@ import video from './blueEarthHero.mp4'; // Make sure to adjust the path
 const Analytics = () => {
   return (
     <div className="analytics-container">
-      <video autoPlay loop muted playsinline webkit-playsinline controls  className="background-video">
+      <video autoPlay loop muted playsinline webkit-playsinline className="background-video">
         <source src={video} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
