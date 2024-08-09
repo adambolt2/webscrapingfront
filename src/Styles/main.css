@@ -13,6 +13,15 @@
 	--secondaryColor: #db2b39;
 	--textColor: #eee;
 }
+.navbar-logo {
+    height: 90px; /* Increased the height for a larger logo */
+    width: auto; /* Automatically adjusts width to maintain aspect ratio */
+    min-width: 120px; /* Minimum width to ensure readability */
+    margin-left: 15px; /* Add some space on the left */
+    padding: 5px; /* Optional padding */
+    object-fit: contain; /* Ensures the logo fits nicely within the given dimensions */
+}
+
 
 header {
 	display: flex;

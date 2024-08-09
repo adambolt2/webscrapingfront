@@ -3,7 +3,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from './AuthContext'; // Import the useAuth hook
 import "../Styles/main.css";
-import logo from '../Images/logo-transparent-png.png'; // with import
+import logo from '../Images/logo.webp'; // with import
 
 function Navbar() {
   const { user, logout } = useAuth(); // Get user and logout function from context
@@ -22,9 +22,8 @@ function Navbar() {
 
   return (
     <header>
-      <h3>
-        Logo here
-      </h3>
+      <img src={logo} alt="Adams Webscraper's Logo" className="navbar-logo" />
+
       <nav ref={navRef}>
         <Link onClick={showNavbar} to="/">Home</Link>
         <Link onClick={showNavbar} to="/Analytics">View Analytics</Link>
