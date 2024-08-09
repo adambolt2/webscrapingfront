@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../Components/AuthContext'; // Import the useAuth hook
+import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import the eye icons
 import './MyProfile.css'; // Import CSS for styling
 
 const MyProfile = () => {
@@ -18,6 +19,7 @@ const MyProfile = () => {
 
   const [loading, setLoading] = useState(false); // Track loading state for API requests
   const [error, setError] = useState(''); // Track error state for API requests
+  const [showApiKey, setShowApiKey] = useState(false); // Track visibility of API key
 
   const handleSubscriptionChange = async (subscriptionType, subscribe) => {
     setLoading(true);
@@ -55,6 +57,10 @@ const MyProfile = () => {
     }
   };
 
+  const toggleApiKeyVisibility = () => {
+    setShowApiKey(!showApiKey);
+  };
+
   return (
     <div className="profile-container">
       <div className="profile-info">
@@ -63,7 +69,20 @@ const MyProfile = () => {
         </div>
         <div className="profile-details">
           <h1>{firstName} {lastName}</h1>
-          <p>API Key: <code>{apiKey}</code></p>
+          <p>
+            API Key: 
+            <code>
+              <input
+                type={showApiKey ? 'text' : 'password'}
+                value={apiKey}
+                readOnly
+                style={{color: 'white', border: 'none', background: 'transparent', marginLeft: '5px' }}
+              />
+            </code>
+            <span onClick={toggleApiKeyVisibility} style={{ cursor: 'pointer', marginLeft: '5px' }}>
+              {showApiKey ? <FaEyeSlash /> : <FaEye />}
+            </span>
+          </p>
         </div>
       </div>
       <div className="subscriptions">
@@ -83,11 +102,18 @@ const MyProfile = () => {
               <div className="linkedin-url">
                 <h4>Indeed API URL:</h4>
                 <p>
-                  <code>
-                  https://adamswebscrapers-hhg8djg9dcd8bqem.ukwest-01.azurewebsites.net/api/IndeedModels/JobTitle/jobTitle/limit/startRow/apiKey
+                  <code style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>
+                    https://adamswebscrapers-hhg8djg9dcd8bqem.ukwest-01.azurewebsites.net/api/IndeedModels/JobTitle/
+                    <span style={{ color: 'red' }}>jobTitle</span>/
+                    <span style={{ color: 'red' }}>limit</span>/
+                    <span style={{ color: 'red' }}>startRow</span>/
+                    <span style={{ color: 'red' }}>apiKey</span>
                   </code>
                 </p>
-                <p>Replace <code>jobTitle</code>, <code>limit</code>, <code>startRow</code> and <code>apiKey</code> with appropriate values.</p>
+                <p>
+                  Replace <code><span style={{ color: 'red' }}>jobTitle</span></code>, <code><span style={{ color: 'red' }}>limit (between 1-100)</span></code>,
+                  <code><span style={{ color: 'red' }}>startRow (between 1-10)</span></code>, and <code><span style={{ color: 'red' }}>apiKey</span></code> with appropriate values.
+                </p>
               </div>
             )}
           </div>
@@ -101,11 +127,18 @@ const MyProfile = () => {
               <div className="linkedin-url">
                 <h4>TotalJobs API URL:</h4>
                 <p>
-                  <code>
-                  https://adamswebscrapers-hhg8djg9dcd8bqem.ukwest-01.azurewebsites.net/api/TotalJobsModels/JobTitle/jobTitle/limit/startRow/apiKey
+                  <code style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>
+                    https://adamswebscrapers-hhg8djg9dcd8bqem.ukwest-01.azurewebsites.net/api/TotalJobsModels/JobTitle/
+                    <span style={{ color: 'red' }}>jobTitle</span>/
+                    <span style={{ color: 'red' }}>limit</span>/
+                    <span style={{ color: 'red' }}>startRow</span>/
+                    <span style={{ color: 'red' }}>apiKey</span>
                   </code>
                 </p>
-                <p>Replace <code>jobTitle</code>, <code>limit</code>, <code>startRow</code> and <code>apiKey</code> with appropriate values.</p>
+                <p>
+                  Replace <code><span style={{ color: 'red' }}>jobTitle</span></code>, <code><span style={{ color: 'red' }}>limit (between 1-100)</span></code>,
+                  <code><span style={{ color: 'red' }}>startRow (between 1-10)</span></code>, and <code><span style={{ color: 'red' }}>apiKey</span></code> with appropriate values.
+                </p>
               </div>
             )}
           </div>
@@ -119,11 +152,18 @@ const MyProfile = () => {
               <div className="linkedin-url">
                 <h4>LinkedIn API URL:</h4>
                 <p>
-                  <code>
-                  https://adamswebscrapers-hhg8djg9dcd8bqem.ukwest-01.azurewebsites.net/api/LinkedInModels/JobTitle/jobTitle/limit/startRow/apiKey
+                  <code style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>
+                    https://adamswebscrapers-hhg8djg9dcd8bqem.ukwest-01.azurewebsites.net/api/LinkedInModels/JobTitle/
+                    <span style={{ color: 'red' }}>jobTitle</span>/
+                    <span style={{ color: 'red' }}>limit</span>/
+                    <span style={{ color: 'red' }}>startRow</span>/
+                    <span style={{ color: 'red' }}>apiKey</span>
                   </code>
                 </p>
-                <p>Replace <code>jobTitle</code>, <code>limit</code>, <code>startRow</code> and <code>apiKey</code> with appropriate values.</p>
+                <p>
+                  Replace <code><span style={{ color: 'red' }}>jobTitle</span></code>, <code><span style={{ color: 'red' }}>limit (between 1-100)</span></code>,
+                  <code><span style={{ color: 'red' }}>startRow (between 1-10)</span></code>, and <code><span style={{ color: 'red' }}>apiKey</span></code> with appropriate values.
+                </p>
               </div>
             )}
           </div>

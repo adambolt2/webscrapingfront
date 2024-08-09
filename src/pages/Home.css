@@ -77,7 +77,10 @@
   animation: typewriter 1s steps(40, end), blinkTextCursor .75s step-end infinite;
   font-size: 36px;
   color: white;
+  word-wrap: break-word;
 }
+
+
 
 @keyframes fadeIn {
   from {
