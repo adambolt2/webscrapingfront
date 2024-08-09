@@ -3,7 +3,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from './AuthContext'; // Import the useAuth hook
 import "../Styles/main.css";
-import logo from '../Images/logo.webp'; // with import
+import logo from '../Images/logo.png'; // with import
 
 function Navbar() {
   const { user, logout } = useAuth(); // Get user and logout function from context
