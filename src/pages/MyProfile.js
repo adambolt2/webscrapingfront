@@ -1,12 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import { useAuth } from '../Components/AuthContext'; // Import the useAuth hook
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import the eye icons
 import './MyProfile.css'; // Import CSS for styling
+import { useNavigate } from 'react-router-dom';
 
 const MyProfile = () => {
   const { user, updateUser } = useAuth(); // Get user data and update function from context
 
   // Destructure user information from context
+
+
+  const [loading, setLoading] = useState(false); // Track loading state for API requests
+  const [error, setError] = useState(''); // Track error state for API requests
+  const [showApiKey, setShowApiKey] = useState(false); // Track visibility of API key
+  const navigate = useNavigate()
+  useEffect(() => {
+    if (!user) {
+      navigate('/login'); // Redirect to login page if user is not logged in
+    }
+  }, [user, navigate]);
+
+  if(!user){
+    return null;
+  }
+
   const {
     firstName,
     lastName,
@@ -16,16 +33,6 @@ const MyProfile = () => {
     totalJobsSubscribed,
     email
   } = user;
-
-  const [loading, setLoading] = useState(false); // Track loading state for API requests
-  const [error, setError] = useState(''); // Track error state for API requests
-  const [showApiKey, setShowApiKey] = useState(false); // Track visibility of API key
-
-  useEffect(() => {
-    if (!user) {
-      navigate('/login'); // Redirect to login page if user is not logged in
-    }
-  }, [user, navigate]);
 
   const handleSubscriptionChange = async (subscriptionType, subscribe) => {
     setLoading(true);
