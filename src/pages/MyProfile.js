@@ -21,6 +21,12 @@ const MyProfile = () => {
   const [error, setError] = useState(''); // Track error state for API requests
   const [showApiKey, setShowApiKey] = useState(false); // Track visibility of API key
 
+  useEffect(() => {
+    if (!user) {
+      navigate('/login'); // Redirect to login page if user is not logged in
+    }
+  }, [user, navigate]);
+
   const handleSubscriptionChange = async (subscriptionType, subscribe) => {
     setLoading(true);
     setError('');
