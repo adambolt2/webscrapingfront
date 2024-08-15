@@ -3,7 +3,8 @@ import { useAuth } from '../Components/AuthContext'; // Import the useAuth hook
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import the eye icons
 import './MyProfile.css'; // Import CSS for styling
 import { useNavigate } from 'react-router-dom';
-
+import axios from 'axios';
+import * as XLSX from 'xlsx'; // Import the xlsx library for Excel generation
 const MyProfile = () => {
   const { user, updateUser } = useAuth(); // Get user data and update function from context
 
@@ -74,6 +75,62 @@ const MyProfile = () => {
     setShowApiKey(!showApiKey);
   };
 
+  const generateExcelIndeed = async () => {
+    const response = await axios.get('https://adamswebscrapers-hhg8djg9dcd8bqem.ukwest-01.azurewebsites.net/api/IndeedModels/fdtjgz8r');
+    const data = response.data;
+    const workbook = XLSX.utils.book_new();
+    const worksheet = XLSX.utils.json_to_sheet(data);
+
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Job Data');
+
+    const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+    const blob = new Blob([excelBuffer], { type: 'application/octet-stream' });
+
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'IndeedData.xlsx';
+    link.click();
+  };
+
+  const generateExcelLinkedIn = async () => {
+    const response = await axios.get('https://adamswebscrapers-hhg8djg9dcd8bqem.ukwest-01.azurewebsites.net/api/LinkedInModels/fdtjgz8r');
+    const data = response.data;
+
+    const workbook = XLSX.utils.book_new();
+    const worksheet = XLSX.utils.json_to_sheet(data);
+
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Job Data');
+
+    const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+    const blob = new Blob([excelBuffer], { type: 'application/octet-stream' });
+
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'LinkedInData.xlsx';
+    link.click();
+    
+  };
+
+
+  const generateExcelTotalJobs = async () => {
+    
+    const response = await axios.get('https://adamswebscrapers-hhg8djg9dcd8bqem.ukwest-01.azurewebsites.net/api/TotalJobsModels/fdtjgz8r');
+    const data = response.data;
+
+    const workbook = XLSX.utils.book_new();
+    const worksheet = XLSX.utils.json_to_sheet(data);
+
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Job Data');
+
+    const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+    const blob = new Blob([excelBuffer], { type: 'application/octet-stream' });
+
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'TotalJobsData.xlsx';
+    link.click();
+  };
+
   return (
     <div className="profile-container">
       <div className="profile-info">
@@ -108,11 +165,13 @@ const MyProfile = () => {
           <div className="subscription-item">
             <h3>Indeed Listings</h3>
             <p>{indeedSubscribed ? 'Subscribed' : 'Not Subscribed'}</p>
-            <button onClick={() => handleSubscriptionChange('indeed', !indeedSubscribed)}>
+            <button className='Subscribe-button' onClick={() => handleSubscriptionChange('indeed', !indeedSubscribed)}>
               {indeedSubscribed ? 'Unsubscribe' : 'Subscribe'}
             </button>
             {indeedSubscribed && (
               <div className="linkedin-url">
+              <button onClick={() => generateExcelIndeed()} className="download-button">Download Excel</button> {/* Download Button */}
+
                 <h4>Indeed API URL:</h4>
                 <p>
                   <code style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>
@@ -133,11 +192,13 @@ const MyProfile = () => {
           <div className="subscription-item">
             <h3>TotalJobs Listings</h3>
             <p>{totalJobsSubscribed ? 'Subscribed' : 'Not Subscribed'}</p>
-            <button onClick={() => handleSubscriptionChange('totalJobs', !totalJobsSubscribed)}>
+            <button  className='Subscribe-button' onClick={() => handleSubscriptionChange('totalJobs', !totalJobsSubscribed)}>
               {totalJobsSubscribed ? 'Unsubscribe' : 'Subscribe'}
             </button>
             {totalJobsSubscribed && (
               <div className="linkedin-url">
+               <button  onClick={() => generateExcelTotalJobs()} className="download-button">Download Excel</button> {/* Download Button */}
+
                 <h4>TotalJobs API URL:</h4>
                 <p>
                   <code style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>
@@ -158,11 +219,13 @@ const MyProfile = () => {
           <div className="subscription-item">
             <h3>LinkedIn</h3>
             <p>{linkedInSubscribed ? 'Subscribed' : 'Not Subscribed'}</p>
-            <button onClick={() => handleSubscriptionChange('linkedin', !linkedInSubscribed)}>
+            <button  className='Subscribe-button' onClick={() => handleSubscriptionChange('linkedin', !linkedInSubscribed)}>
               {linkedInSubscribed ? 'Unsubscribe' : 'Subscribe'}
             </button>
             {linkedInSubscribed && (
               <div className="linkedin-url">
+               <button onClick={() => generateExcelLinkedIn()} className="download-button">Download Excel</button> {/* Download Button */}
+
                 <h4>LinkedIn API URL:</h4>
                 <p>
                   <code style={{ whiteSpace: 'normal', wordWrap: 'break-word' }}>

@@ -13,6 +13,21 @@
     font-family: Arial, sans-serif; /* Optional: Set a default font */
   }
   
+  .download-button{
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1d9e35;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+
+  .download-button:hover {
+    background-color: #1d9e3596;
+  }
   
   .profile-info {
     flex: 1;
@@ -72,7 +87,7 @@
     margin: 5px 0 0;
   }
   
-  .subscription-item button {
+  .Subscribe-button {
     margin-top: 10px;
     padding: 10px 20px;
     border: none;
@@ -83,7 +98,7 @@
     transition: background-color 0.3s ease;
   }
   
-  .subscription-item button:hover {
+  .Subscribe-button:hover {
     background-color: #0056b3;
   }
   
